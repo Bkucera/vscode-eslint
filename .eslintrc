@@ -1,0 +1,134 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"plugin:cypress-dev/general"
+	],
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"rules": {
+		"no-console": "off",
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		"no-else-return": [
+			"error",
+			{
+				"allowElseIf": false
+			}
+		],
+		"brace-style": [
+			"error",
+			"1tbs",
+			{
+				"allowSingleLine": false
+			}
+		],
+		"no-unneeded-ternary": [
+			"error"
+		],
+		"array-bracket-newline": [
+			"error",
+			"consistent"
+		],
+		"arrow-body-style": [
+			"error",
+			"always"
+		],
+		"padding-line-between-statements": [
+			"error",
+			{
+				"blankLine": "always",
+				"prev": "*",
+				"next": "return"
+			},
+			{
+				"blankLine": "always",
+				"prev": [
+					"const",
+					"let",
+					"var",
+					"if",
+					"while",
+					"export",
+					"cjs-export",
+					"import",
+					"cjs-import"
+				],
+				"next": "*"
+			},
+			{
+				"blankLine": "any",
+				"prev": [
+					"const",
+					"let",
+					"var",
+					"import",
+					"cjs-import"
+				],
+				"next": [
+					"const",
+					"let",
+					"var",
+					"import",
+					"cjs-import"
+				]
+			}
+		]
+	},
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"legacyDecorators": true
+		}
+	},
+	"overrides": [
+		{
+			"files": [
+				"*.jsx"
+			],
+			"rules": {
+				"arrow-body-style": "off"
+			}
+		},
+		{
+			"files": [
+				"*.ts"
+			],
+			"rules": {
+				"no-self-assign": "off",
+				"no-unused-vars": "off",
+				"@typescript-eslint/no-unused-vars": "warn",
+				"no-useless-constructor": "off",
+				"@typescript-eslint/no-useless-constructor": "warn",
+				"semi": "off",
+				"@typescript-eslint/semi": [
+					"error",
+					"never"
+				],
+				"@typescript-eslint/member-delimiter-style": [
+					"error",
+					{
+						"multiline": {
+							"delimiter": "none"
+						},
+						"singleline": {
+							"delimiter": "comma"
+						}
+					}
+				],
+				"no-inner-declarations": "off",
+				"@typescript-eslint/no-inner-declarations": "on",
+				"no-mixed-spaces-and-tabs": "off"
+			}
+		}
+	]
+}
